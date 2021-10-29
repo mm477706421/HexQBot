@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Admin Panel</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/themes/core/static/img/favicon.ico?d=629828ac" type="image/x-icon">
+	<link rel="icon" href="/themes/core/static/img/favicon.ico?d=629828ac" type="image/x-icon">
+	<link rel="stylesheet" href="/themes/core/static/css/fonts.min.css?d=629828ac">
+	<link rel="stylesheet" href="/themes/core/static/css/main.min.css?d=629828ac">
+	<link rel="stylesheet" href="/themes/admin/static/css/admin.min.css?d=629828ac">
+	<link rel="stylesheet" href="/themes/admin/static/css/codemirror.min.css?d=629828ac">
+	<script type="text/javascript">
+		var init = {
+			'urlRoot': "",
+			'csrfNonce': "5bfbfc90e6d5061c2ba09e9310ed070432c5803080355cf4721308e7c1ade3ac",
+			'userMode': "users",
+			'userId': 0,
+			'start': null,
+			'end': null,
+		}
+	</script>
+	
+
+	
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a href="/" class="navbar-brand">CTFd</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars"
+					aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="base-navbars">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="/admin/statistics">Statistics</a></li>
+					<li class="nav-item"><a class="nav-link" href="/admin/notifications">Notifications</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Pages</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/admin/pages">All Pages</a>
+							<a class="dropdown-item" href="/admin/pages/new">New Page</a>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/admin/users">Users</a></li>
+					
+					<li class="nav-item"><a class="nav-link" href="/admin/scoreboard">Scoreboard</a></li>
+					<li class="nav-item"><a class="nav-link" href="/admin/challenges">Challenges</a></li>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+						   aria-haspopup="true" aria-expanded="true">Submissions</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/admin/submissions">All Submissions</a>
+							<a class="dropdown-item" href="/admin/submissions/correct">Correct Submissions</a>
+							<a class="dropdown-item" href="/admin/submissions/incorrect">Wrong Submissions</a>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/admin/config">Config</a></li>
+
+					
+					
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="nav-item">
+						<a class="nav-link" href="https://docs.ctfd.io/" target="_blank">
+							<i class="far fa-question-circle"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main role="main">
+		
+		
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>Correct Submissions</h1>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-12">
+			
+
+			
+			<form method="GET" class="form-inline">
+				<div class="form-group col-md-2 pr-0">
+					<select class="form-control custom-select w-100" id="field" name="field" required><option value="provided">Provided</option><option value="id">ID</option><option value="account_id">Account ID</option><option value="challenge_id">Challenge ID</option><option value="challenge_name">Challenge Name</option></select>
+				</div>
+				<div class="form-group col-md-8">
+					<input class="form-control w-100" id="q" name="q" placeholder="Search for matching submission" required type="text" value="">
+				</div>
+				<div class="form-group col-md-2">
+					<button type="submit" class="btn btn-primary w-100">
+						<i class="fas fa-search" aria-hidden="true"></i>
+					</button>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="float-right pb-3">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-outline-danger" id="submission-delete-button">
+						<i class="btn-fa fas fa-trash-alt"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<table id="teamsboard" class="table table-striped border">
+				<thead>
+					<tr>
+						<th class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" data-checkbox-all>&nbsp;
+							</div>
+						</th>
+						<th class="text-center sort-col"><b>ID</b></th>
+						<th class="sort-col"><b>User</b></th>
+						<th class="sort-col"><b>Challenge</b></th>
+						<th class="sort-col"><b>Type</b></th>
+						<th class="sort-col"><b>Provided</b></th>
+						<th class="text-center sort-col"><b>Date</b></th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="157" data-submission-id="157">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="157">
+							157
+						</td>
+						<td class="team" id="49">
+							<a href="/admin/users/49">
+								track
+							</a>
+						</td>
+						<td class="chal" id="30">
+							<a href="/admin/challenges/30">
+								Welcome
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="157">
+							<pre class="mb-0">yysec{re_so_easy}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-05T07:22:19Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="151" data-submission-id="151">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="151">
+							151
+						</td>
+						<td class="team" id="49">
+							<a href="/admin/users/49">
+								track
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="151">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-05T05:42:59Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="150" data-submission-id="150">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="150">
+							150
+						</td>
+						<td class="team" id="49">
+							<a href="/admin/users/49">
+								track
+							</a>
+						</td>
+						<td class="chal" id="16">
+							<a href="/admin/challenges/16">
+								♂一起来击剑♂
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="150">
+							<pre class="mb-0">flag{com3_On_m4n!_Boy_n3xt_dO0r}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-05T05:37:25Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="149" data-submission-id="149">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="149">
+							149
+						</td>
+						<td class="team" id="49">
+							<a href="/admin/users/49">
+								track
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="149">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-05T05:07:32Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="148" data-submission-id="148">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="148">
+							148
+						</td>
+						<td class="team" id="49">
+							<a href="/admin/users/49">
+								track
+							</a>
+						</td>
+						<td class="chal" id="14">
+							<a href="/admin/challenges/14">
+								公众号
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="148">
+							<pre class="mb-0">flag{we1c0mE_t0_YYCTF!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-05T05:05:22Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="147" data-submission-id="147">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="147">
+							147
+						</td>
+						<td class="team" id="49">
+							<a href="/admin/users/49">
+								track
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="147">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-05T05:04:12Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="137" data-submission-id="137">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="137">
+							137
+						</td>
+						<td class="team" id="45">
+							<a href="/admin/users/45">
+								PolarisLight
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="137">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:36:12Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="136" data-submission-id="136">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="136">
+							136
+						</td>
+						<td class="team" id="45">
+							<a href="/admin/users/45">
+								PolarisLight
+							</a>
+						</td>
+						<td class="chal" id="6">
+							<a href="/admin/challenges/6">
+								根正苗红
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="136">
+							<pre class="mb-0">flag{I_4m_Ch1n3sE_And_1_r3aLLy_l0ve_cHiNa!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:12:56Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="132" data-submission-id="132">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="132">
+							132
+						</td>
+						<td class="team" id="45">
+							<a href="/admin/users/45">
+								PolarisLight
+							</a>
+						</td>
+						<td class="chal" id="5">
+							<a href="/admin/challenges/5">
+								糖豆人
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="132">
+							<pre class="mb-0">flag{fXxk_y0u_maN_Wh4t_d1D_U_s4y?}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:09:04Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="131" data-submission-id="131">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="131">
+							131
+						</td>
+						<td class="team" id="44">
+							<a href="/admin/users/44">
+								Dujei
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="131">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:06:45Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="130" data-submission-id="130">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="130">
+							130
+						</td>
+						<td class="team" id="45">
+							<a href="/admin/users/45">
+								PolarisLight
+							</a>
+						</td>
+						<td class="chal" id="16">
+							<a href="/admin/challenges/16">
+								♂一起来击剑♂
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="130">
+							<pre class="mb-0">flag{com3_On_m4n!_Boy_n3xt_dO0r}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:03:23Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="128" data-submission-id="128">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="128">
+							128
+						</td>
+						<td class="team" id="44">
+							<a href="/admin/users/44">
+								Dujei
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="128">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:00:52Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="127" data-submission-id="127">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="127">
+							127
+						</td>
+						<td class="team" id="45">
+							<a href="/admin/users/45">
+								PolarisLight
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="127">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T13:00:40Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="126" data-submission-id="126">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="126">
+							126
+						</td>
+						<td class="team" id="18">
+							<a href="/admin/users/18">
+								寒霜
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="126">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T12:56:08Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="123" data-submission-id="123">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="123">
+							123
+						</td>
+						<td class="team" id="44">
+							<a href="/admin/users/44">
+								Dujei
+							</a>
+						</td>
+						<td class="chal" id="14">
+							<a href="/admin/challenges/14">
+								公众号
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="123">
+							<pre class="mb-0">flag{we1c0mE_t0_YYCTF!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T12:28:56Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="121" data-submission-id="121">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="121">
+							121
+						</td>
+						<td class="team" id="36">
+							<a href="/admin/users/36">
+								Tru1
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="121">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T10:45:54Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="120" data-submission-id="120">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="120">
+							120
+						</td>
+						<td class="team" id="24">
+							<a href="/admin/users/24">
+								evil
+							</a>
+						</td>
+						<td class="chal" id="30">
+							<a href="/admin/challenges/30">
+								Welcome
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="120">
+							<pre class="mb-0">yysec{re_so_easy}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T10:22:07Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="114" data-submission-id="114">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="114">
+							114
+						</td>
+						<td class="team" id="43">
+							<a href="/admin/users/43">
+								Misr
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="114">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T08:53:42Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="113" data-submission-id="113">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="113">
+							113
+						</td>
+						<td class="team" id="42">
+							<a href="/admin/users/42">
+								aurora
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="113">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T08:14:44Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="109" data-submission-id="109">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="109">
+							109
+						</td>
+						<td class="team" id="23">
+							<a href="/admin/users/23">
+								虚无
+							</a>
+						</td>
+						<td class="chal" id="6">
+							<a href="/admin/challenges/6">
+								根正苗红
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="109">
+							<pre class="mb-0">flag{I_4m_Ch1n3sE_And_1_r3aLLy_l0ve_cHiNa!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T05:20:05Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="108" data-submission-id="108">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="108">
+							108
+						</td>
+						<td class="team" id="23">
+							<a href="/admin/users/23">
+								虚无
+							</a>
+						</td>
+						<td class="chal" id="16">
+							<a href="/admin/challenges/16">
+								♂一起来击剑♂
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="108">
+							<pre class="mb-0">flag{com3_On_m4n!_Boy_n3xt_dO0r}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T05:05:14Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="107" data-submission-id="107">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="107">
+							107
+						</td>
+						<td class="team" id="23">
+							<a href="/admin/users/23">
+								虚无
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="107">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T04:48:16Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="106" data-submission-id="106">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="106">
+							106
+						</td>
+						<td class="team" id="23">
+							<a href="/admin/users/23">
+								虚无
+							</a>
+						</td>
+						<td class="chal" id="14">
+							<a href="/admin/challenges/14">
+								公众号
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="106">
+							<pre class="mb-0">flag{we1c0mE_t0_YYCTF!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T04:47:32Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="105" data-submission-id="105">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="105">
+							105
+						</td>
+						<td class="team" id="23">
+							<a href="/admin/users/23">
+								虚无
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="105">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T04:41:23Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="104" data-submission-id="104">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="104">
+							104
+						</td>
+						<td class="team" id="23">
+							<a href="/admin/users/23">
+								虚无
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="104">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T04:30:36Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="102" data-submission-id="102">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="102">
+							102
+						</td>
+						<td class="team" id="17">
+							<a href="/admin/users/17">
+								GS
+							</a>
+						</td>
+						<td class="chal" id="27">
+							<a href="/admin/challenges/27">
+								easy_md5
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="102">
+							<pre class="mb-0">yyctf{0h_Md5_So_aw3s0mE!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T03:31:44Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="101" data-submission-id="101">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="101">
+							101
+						</td>
+						<td class="team" id="40">
+							<a href="/admin/users/40">
+								noViC4
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="101">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T03:15:28Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="100" data-submission-id="100">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="100">
+							100
+						</td>
+						<td class="team" id="37">
+							<a href="/admin/users/37">
+								notabi
+							</a>
+						</td>
+						<td class="chal" id="14">
+							<a href="/admin/challenges/14">
+								公众号
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="100">
+							<pre class="mb-0">flag{we1c0mE_t0_YYCTF!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T03:04:00Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="99" data-submission-id="99">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="99">
+							99
+						</td>
+						<td class="team" id="37">
+							<a href="/admin/users/37">
+								notabi
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="99">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T03:02:49Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="97" data-submission-id="97">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="97">
+							97
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="29">
+							<a href="/admin/challenges/29">
+								easy_misc
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="97">
+							<pre class="mb-0">YYSEC{Y0u_@^e_th$_G0d_0F_/\/\1sc}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:50:19Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="96" data-submission-id="96">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="96">
+							96
+						</td>
+						<td class="team" id="8">
+							<a href="/admin/users/8">
+								GG
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="96">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:45:13Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="95" data-submission-id="95">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="95">
+							95
+						</td>
+						<td class="team" id="8">
+							<a href="/admin/users/8">
+								GG
+							</a>
+						</td>
+						<td class="chal" id="29">
+							<a href="/admin/challenges/29">
+								easy_misc
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="95">
+							<pre class="mb-0">YYSEC{Y0u_@^e_th$_G0d_0F_/\/\1sc}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:32:41Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="94" data-submission-id="94">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="94">
+							94
+						</td>
+						<td class="team" id="18">
+							<a href="/admin/users/18">
+								寒霜
+							</a>
+						</td>
+						<td class="chal" id="18">
+							<a href="/admin/challenges/18">
+								二刺螈 s e 图
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="94">
+							<pre class="mb-0">YYSEC{H$re_1s_y0ur_f1a9}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:26:41Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="92" data-submission-id="92">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="92">
+							92
+						</td>
+						<td class="team" id="36">
+							<a href="/admin/users/36">
+								Tru1
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="92">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:23:38Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="91" data-submission-id="91">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="91">
+							91
+						</td>
+						<td class="team" id="35">
+							<a href="/admin/users/35">
+								Cyan
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="91">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:20:35Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="90" data-submission-id="90">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="90">
+							90
+						</td>
+						<td class="team" id="35">
+							<a href="/admin/users/35">
+								Cyan
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="90">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T02:19:45Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="84" data-submission-id="84">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="84">
+							84
+						</td>
+						<td class="team" id="18">
+							<a href="/admin/users/18">
+								寒霜
+							</a>
+						</td>
+						<td class="chal" id="16">
+							<a href="/admin/challenges/16">
+								♂一起来击剑♂
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="84">
+							<pre class="mb-0">flag{com3_On_m4n!_Boy_n3xt_dO0r}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T01:23:12Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="83" data-submission-id="83">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="83">
+							83
+						</td>
+						<td class="team" id="18">
+							<a href="/admin/users/18">
+								寒霜
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="83">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T00:42:06Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="82" data-submission-id="82">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="82">
+							82
+						</td>
+						<td class="team" id="33">
+							<a href="/admin/users/33">
+								R3gr3t
+							</a>
+						</td>
+						<td class="chal" id="25">
+							<a href="/admin/challenges/25">
+								easy_php
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="82">
+							<pre class="mb-0">yyctf{Dooooo_y0u_l1k3_Php_QAQ?}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T00:33:51Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="81" data-submission-id="81">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="81">
+							81
+						</td>
+						<td class="team" id="33">
+							<a href="/admin/users/33">
+								R3gr3t
+							</a>
+						</td>
+						<td class="chal" id="23">
+							<a href="/admin/challenges/23">
+								easy_num
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="81">
+							<pre class="mb-0">yyctf{0h_1_h4te_m4th!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T00:09:38Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="80" data-submission-id="80">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="80">
+							80
+						</td>
+						<td class="team" id="33">
+							<a href="/admin/users/33">
+								R3gr3t
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="80">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T00:06:33Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="79" data-submission-id="79">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="79">
+							79
+						</td>
+						<td class="team" id="33">
+							<a href="/admin/users/33">
+								R3gr3t
+							</a>
+						</td>
+						<td class="chal" id="16">
+							<a href="/admin/challenges/16">
+								♂一起来击剑♂
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="79">
+							<pre class="mb-0">flag{com3_On_m4n!_Boy_n3xt_dO0r}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T00:02:45Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="78" data-submission-id="78">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="78">
+							78
+						</td>
+						<td class="team" id="33">
+							<a href="/admin/users/33">
+								R3gr3t
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="78">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-04T00:00:34Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="77" data-submission-id="77">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="77">
+							77
+						</td>
+						<td class="team" id="27">
+							<a href="/admin/users/27">
+								orz -&gt; FZR
+							</a>
+						</td>
+						<td class="chal" id="21">
+							<a href="/admin/challenges/21">
+								Get&amp;Post
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="77">
+							<pre class="mb-0">yyctf{GeT_1ove_PoST_4nd_Y0u}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T13:22:59Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="75" data-submission-id="75">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="75">
+							75
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="14">
+							<a href="/admin/challenges/14">
+								公众号
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="75">
+							<pre class="mb-0">flag{we1c0mE_t0_YYCTF!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T13:05:23Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="73" data-submission-id="73">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="73">
+							73
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="15">
+							<a href="/admin/challenges/15">
+								QQ群
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="73">
+							<pre class="mb-0">flag{yUn_y1ng_4n_Qu4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T13:02:01Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="71" data-submission-id="71">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="71">
+							71
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="6">
+							<a href="/admin/challenges/6">
+								根正苗红
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="71">
+							<pre class="mb-0">flag{I_4m_Ch1n3sE_And_1_r3aLLy_l0ve_cHiNa!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T13:00:49Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="70" data-submission-id="70">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="70">
+							70
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="7">
+							<a href="/admin/challenges/7">
+								芜湖！起飞！
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="70">
+							<pre class="mb-0">flag{h3ll0_da_S1_ma_and_y0u_p1ay_L0L_r3aLly_FUN!}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T12:56:45Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="69" data-submission-id="69">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="69">
+							69
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="4">
+							<a href="/admin/challenges/4">
+								base64
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="69">
+							<pre class="mb-0">flag{This_1s_jusT_b4se64}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T12:52:54Z"></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="border-right" data-checkbox>
+							<div class="form-check text-center">
+								<input type="checkbox" class="form-check-input" value="68" data-submission-id="68">&nbsp;
+							</div>
+						</td>
+						<td class="text-center" id="68">
+							68
+						</td>
+						<td class="team" id="20">
+							<a href="/admin/users/20">
+								luoqian
+							</a>
+						</td>
+						<td class="chal" id="5">
+							<a href="/admin/challenges/5">
+								糖豆人
+							</a>
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="68">
+							<pre class="mb-0">flag{fXxk_y0u_maN_Wh4t_d1D_U_s4y?}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-10-03T12:52:40Z"></span>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<div class="text-center">Page
+				<br>
+				
+					<a href="/admin/submissions/correct?page=1">&lt;&lt;&lt;</a>
+				
+				<select class="page-select">
+					
+					<option >1</option>
+					
+					<option selected>2</option>
+					
+					<option >3</option>
+					
+				</select>
+				
+					<a href="/admin/submissions/correct?page=3">&gt;&gt;&gt;</a>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+	</main>
+
+	<footer class="footer pt-2">
+		<div class="container text-center">
+			<a href="https://ctfd.io" class="text-secondary">
+				<small class="text-muted">
+					Powered by CTFd
+				</small>
+			</a>
+			<span>
+				<small class="text-muted"><br> Version 3.1.1</small>
+			</span>
+		</div>
+	</footer>
+
+	<script defer src="/themes/admin/static/js/vendor.bundle.min.js?d=629828ac"></script>
+	<script defer src="/themes/admin/static/js/core.min.js?d=629828ac"></script>
+	<script defer src="/themes/admin/static/js/helpers.min.js?d=629828ac"></script>
+	<script defer src="/themes/admin/static/js/components.min.js?d=629828ac"></script>
+
+	
+	<script defer src="/themes/admin/static/js/pages/submissions.min.js?d=629828ac"></script>
+
+
+	
+
+
+	
+</body>
+
+</html>

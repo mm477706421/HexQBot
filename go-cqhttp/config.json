@@ -1,0 +1,30 @@
+{
+    "uin": 1659379965,
+    "password": "3a8G4r_e8g",
+    "encrypt_password": false,
+    "password_encrypted": "",
+    "enable_db": true,
+    "access_token": "",
+    "relogin": true,
+    "relogin_delay": 3,
+    "http_config": {
+        "enabled": true,
+        "host": "127.0.0.1",
+        "port": 5700,
+        "post_urls": { "http://127.0.0.1:5701": "secret" },
+        "post_message_format": "string"
+    },
+    "ws_config": {
+        "enabled": true,
+        "host": "0.0.0.0",
+        "port": 6700
+    },
+    "ws_reverse_servers": [{
+        "enabled": false,
+        "reverse_url": "ws://you_websocket_universal.server",
+        "reverse_api_url": "ws://you_websocket_api.server",
+        "reverse_event_url": "ws://you_websocket_event.server",
+        "reverse_reconnect_interval": 3000
+    }],
+    "debug": false
+}

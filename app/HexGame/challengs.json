@@ -1,0 +1,725 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "type": "standard",
+            "name": "Welcome",
+            "value": 10,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 12,
+            "type": "standard",
+            "name": "soeasy",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 13,
+            "type": "standard",
+            "name": "GET",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 14,
+            "type": "standard",
+            "name": "POST",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 15,
+            "type": "standard",
+            "name": "XFF&Referer",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 22,
+            "type": "standard",
+            "name": "ezmd5",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 23,
+            "type": "standard",
+            "name": "ezmd5-2",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 24,
+            "type": "standard",
+            "name": "\u8df3\u8f6c",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 28,
+            "type": "standard",
+            "name": "\u6211\u7231\u5403\u997c\u5e72",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 30,
+            "type": "standard",
+            "name": "eztrick",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 35,
+            "type": "standard",
+            "name": "easyre",
+            "value": 10,
+            "category": "Reverse",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 37,
+            "type": "standard",
+            "name": "nananananananana",
+            "value": 10,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 43,
+            "type": "standard",
+            "name": "$$",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 44,
+            "type": "standard",
+            "name": "extract",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 45,
+            "type": "standard",
+            "name": "Classical0",
+            "value": 10,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 46,
+            "type": "standard",
+            "name": "Classical1",
+            "value": 10,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 52,
+            "type": "standard",
+            "name": "parse_str",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 74,
+            "type": "standard",
+            "name": "\u4e00\u952egetflag",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 78,
+            "type": "standard",
+            "name": "\u91d1\u4e3b\u7238\u72382",
+            "value": 10,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 94,
+            "type": "CTFd-Fish",
+            "name": "ezupload",
+            "value": 10,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/CTFd_Fish/assets/view.html",
+            "script": "/plugins/CTFd_Fish/assets/view.js"
+        },
+        {
+            "id": 26,
+            "type": "standard",
+            "name": "\u672a\u5b8c\u6210\u7684\u7559\u8a00\u677f",
+            "value": 20,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 34,
+            "type": "standard",
+            "name": "RCE bypass",
+            "value": 20,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 36,
+            "type": "standard",
+            "name": "\u82b1\u6307\u4ee4",
+            "value": 20,
+            "category": "Reverse",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 49,
+            "type": "standard",
+            "name": "Unserialize",
+            "value": 20,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 58,
+            "type": "standard",
+            "name": "easystack",
+            "value": 20,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 67,
+            "type": "standard",
+            "name": "easy_smc",
+            "value": 20,
+            "category": "Reverse",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 72,
+            "type": "standard",
+            "name": "SQL_injection",
+            "value": 20,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 76,
+            "type": "standard",
+            "name": "SilentEye",
+            "value": 20,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 77,
+            "type": "standard",
+            "name": "\u91d1\u4e3b\u7238\u7238",
+            "value": 20,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 86,
+            "type": "standard",
+            "name": "\u90a3\u4e2a\u7537\u4eba",
+            "value": 20,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 47,
+            "type": "standard",
+            "name": "Classical2",
+            "value": 30,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 48,
+            "type": "standard",
+            "name": "Classical3",
+            "value": 30,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 55,
+            "type": "standard",
+            "name": "simplefmt",
+            "value": 30,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 59,
+            "type": "standard",
+            "name": "flask_SSTI",
+            "value": 30,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 71,
+            "type": "standard",
+            "name": "\u6742\u70e9",
+            "value": 30,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 82,
+            "type": "standard",
+            "name": "\u4e09\u6b65\u8d70",
+            "value": 30,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 85,
+            "type": "standard",
+            "name": "\u4e09\u4eba\u6210\u864e",
+            "value": 30,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 95,
+            "type": "CTFd-Fish",
+            "name": "ezupload-2",
+            "value": 30,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/CTFd_Fish/assets/view.html",
+            "script": "/plugins/CTFd_Fish/assets/view.js"
+        },
+        {
+            "id": 98,
+            "type": "CTFd-Fish",
+            "name": "createfun",
+            "value": 30,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/CTFd_Fish/assets/view.html",
+            "script": "/plugins/CTFd_Fish/assets/view.js"
+        },
+        {
+            "id": 10,
+            "type": "dynamic",
+            "name": "PHP ezfeatures",
+            "value": 38,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/dynamic_challenges/assets/view.html",
+            "script": "/plugins/dynamic_challenges/assets/view.js"
+        },
+        {
+            "id": 19,
+            "type": "dynamic",
+            "name": "easyheap",
+            "value": 50,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/dynamic_challenges/assets/view.html",
+            "script": "/plugins/dynamic_challenges/assets/view.js"
+        },
+        {
+            "id": 20,
+            "type": "standard",
+            "name": "fakeExcel",
+            "value": 50,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 21,
+            "type": "standard",
+            "name": "ezBase64",
+            "value": 50,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 33,
+            "type": "standard",
+            "name": "ezsession",
+            "value": 50,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 39,
+            "type": "standard",
+            "name": "ezRSA0",
+            "value": 50,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 40,
+            "type": "standard",
+            "name": "ezRSA1",
+            "value": 50,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 41,
+            "type": "standard",
+            "name": "ezRSA2",
+            "value": 50,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 42,
+            "type": "standard",
+            "name": "ezRSA3",
+            "value": 50,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 50,
+            "type": "standard",
+            "name": "Unserialize_pro",
+            "value": 50,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 51,
+            "type": "standard",
+            "name": "RCE_bypass_pro",
+            "value": 50,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 53,
+            "type": "standard",
+            "name": "\u5927\u5a01\u5929\u9f99",
+            "value": 50,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 56,
+            "type": "standard",
+            "name": "\u9690\u79d8\u7684\u89d2\u843d",
+            "value": 50,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 61,
+            "type": "standard",
+            "name": "ezPRNG0",
+            "value": 50,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 63,
+            "type": "standard",
+            "name": "ezPRNG1",
+            "value": 50,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 68,
+            "type": "standard",
+            "name": "\u731c\u548c\u85cf",
+            "value": 50,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 69,
+            "type": "standard",
+            "name": "\u9ed1\u8138\u5154",
+            "value": 50,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 99,
+            "type": "standard",
+            "name": "simple_shellcode",
+            "value": 50,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 97,
+            "type": "CTFd-Fish",
+            "name": "Noparameters",
+            "value": 92,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/CTFd_Fish/assets/view.html",
+            "script": "/plugins/CTFd_Fish/assets/view.js"
+        },
+        {
+            "id": 25,
+            "type": "standard",
+            "name": "Overflow",
+            "value": 100,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 27,
+            "type": "standard",
+            "name": "babystack",
+            "value": 100,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 29,
+            "type": "standard",
+            "name": "randomBase",
+            "value": 100,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 32,
+            "type": "standard",
+            "name": "\u6211\u7684\u4e00\u8840\u88ab\u62ff\u4e86",
+            "value": 100,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 64,
+            "type": "standard",
+            "name": "ezPRNG2",
+            "value": 100,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 65,
+            "type": "standard",
+            "name": "ezPRNG3",
+            "value": 100,
+            "category": "Crypto",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 91,
+            "type": "dynamic",
+            "name": "pcap",
+            "value": 100,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/dynamic_challenges/assets/view.html",
+            "script": "/plugins/dynamic_challenges/assets/view.js"
+        },
+        {
+            "id": 100,
+            "type": "standard",
+            "name": "simple_stack",
+            "value": 100,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 101,
+            "type": "standard",
+            "name": "baby_tcache",
+            "value": 100,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 103,
+            "type": "standard",
+            "name": "\u62fc\u56fe",
+            "value": 100,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 96,
+            "type": "CTFd-Fish",
+            "name": "No parameters readfile",
+            "value": 183,
+            "category": "Web",
+            "tags": [],
+            "template": "/plugins/CTFd_Fish/assets/view.html",
+            "script": "/plugins/CTFd_Fish/assets/view.js"
+        },
+        {
+            "id": 18,
+            "type": "dynamic",
+            "name": "magic_heap",
+            "value": 200,
+            "category": "Pwn",
+            "tags": [],
+            "template": "/plugins/dynamic_challenges/assets/view.html",
+            "script": "/plugins/dynamic_challenges/assets/view.js"
+        },
+        {
+            "id": 80,
+            "type": "standard",
+            "name": "\u9b54\u9b3c\u5957\u5a03",
+            "value": 200,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        },
+        {
+            "id": 81,
+            "type": "standard",
+            "name": "\u9b54\u9b3c\u5957\u5a032",
+            "value": 200,
+            "category": "Misc",
+            "tags": [],
+            "template": "/plugins/challenges/assets/view.html",
+            "script": "/plugins/challenges/assets/view.js"
+        }
+    ]
+}
