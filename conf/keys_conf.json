@@ -1,0 +1,18 @@
+{
+    "baiducloud": {
+        "client_id": "Dawnwhisper",
+        "client_secret": "ZZJzzj020613",
+        "access_token": "ed27fd22499f437b9c304af10fcfb2b6"
+    },
+    "0xCTFadmin": {
+        "username": "xxx",
+        "password": "xxx"
+    },
+    "YYCTFAdmin": {
+        "username": "BOT",
+        "password": "3a8G4r_e8g"
+    },
+    "tianapi": ["264fb842f55d2560dd502fbda846ce22"],
+    "afdian_post": "xxxx",
+    "self_qq": 1634871401
+}
