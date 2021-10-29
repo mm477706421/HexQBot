@@ -7,7 +7,7 @@ from tencentcloud.nlp.v20190408 import nlp_client, models
 
 def charNLP(msg):
     try:
-        cred = credential.Credential("AKIDobw3IIqxJpBejip8Vp05yKfu8LPKdfCU", "B6C6mNEwlWHo55pIUQ6Ylgz5vUt6B6rS")
+        cred = credential.Credential("", "")
         httpProfile = HttpProfile()
         httpProfile.endpoint = "nlp.tencentcloudapi.com"
 
